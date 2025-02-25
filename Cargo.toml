@@ -4,4 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.96"
 async-mcp = { git = "https://github.com/v3g42/async-mcp", rev = "36400d5" }
+serde_json = "1.0.139"
+tokio = "1.43.0"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
