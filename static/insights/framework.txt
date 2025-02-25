@@ -353,7 +353,22 @@ struct Counter {
     human_count: u32,
 }
 
-Supported types:
+Custom Types
+For user defined types, it's crucial to implement the Introspect trait if you plan to use those types inside a model.
+
+Two possible cases:
+
+If the user-defined type contains only Cairo built-in types and is defined within your project, simply derive Introspect and the implementation for the type will be handled automatically by Cairo.
+
+#[derive(Drop, Serde, Introspect)]
+struct Stats {
+    atk: u8,
+    def: u8,
+}
+If the user-defined type includes a type that is either defined outside of your project or is an unsupported type, you will need to manually implement the Introspect trait.
+
+
+Primitive types:
 
 bool
 u8
